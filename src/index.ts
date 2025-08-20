@@ -1,5 +1,6 @@
 import { serve } from "@hono/node-server";
-import app from "./routers/api-router";
+import { app } from "./routers/api-router";
+
 
 serve(
   {
@@ -10,3 +11,5 @@ serve(
     console.log(`Server is running on http://localhost:${info.port}`);
   }
 );
+
+export default app;

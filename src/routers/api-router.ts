@@ -47,4 +47,4 @@ app.on(["POST", "GET"], "/api/auth/*", (c) => {
   return auth.handler(c.req.raw);
 });
 
-export default app;
+export { app };
