@@ -1,0 +1,25 @@
+{
+  "extends": "../../packages/typescript-config/base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "types": [
+      "node"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@tsconfig/*": ["../../packages/typescript-config/*"],
+      "@ui/*": ["../../packages/ui/src/*"],
+      "@eslint/*": ["../../packages/eslint-config/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "allowImportingTsExtensions": true
+}
