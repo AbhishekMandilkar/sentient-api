@@ -17,6 +17,7 @@ export const users = pgTable(
     image: text("image"),
     createdAt: timestamp("createdAt").notNull(),
     updatedAt: timestamp("updatedAt").notNull(),
+    isAnonymous: boolean("isAnonymous"),
   },
   (t) => [index().on(t.email)]
 );

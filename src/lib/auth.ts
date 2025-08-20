@@ -1,6 +1,9 @@
-import {db} from "@/drizzle";
+
 import { betterAuth } from "better-auth";
 import {drizzleAdapter} from "better-auth/adapters/drizzle";
+import {db} from "../drizzle";
+import {expo} from "@better-auth/expo";
+import { anonymous } from "better-auth/plugins"
 
  
 export const auth = betterAuth({
@@ -14,5 +17,9 @@ export const auth = betterAuth({
   },
   secret: process.env.BETTER_AUTH_SECRET!,
   baseURL: process.env.BETTER_AUTH_URL!,
-  trustedOrigins: ["sentient://"]
+  trustedOrigins: ["sentient://"],
+  plugins: [
+    expo(),
+    anonymous(),
+  ]
 });
